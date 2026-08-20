@@ -27,6 +27,12 @@ python3 tools/dev-server.py 5173
 ./tools/build-site.sh
 ```
 
+## Cloudflare deployment
+
+The repository is ready for Cloudflare Workers Builds with repository root `/`,
+build command `./tools/build-site.sh`, and deploy command `npx wrangler deploy`.
+Attach `hush.kaizosha.org` as the Worker's custom domain after the first deploy.
+
 ## Routes
 
 - `/` — permanently expanded Hush product surface
@@ -39,9 +45,8 @@ database, account, analytics SDK, or build dependency in this website. The
 explicit build allowlist produces `dist/client` plus the static Cloudflare
 Worker entrypoint at `dist/server/index.js`.
 
-The root metadata references
-`assets/media/social/hush-social-card.png`. The build copies that image when it
-exists; the source intentionally does not include a fallback or generic card.
+The root metadata and production build include the 1200 × 630 product card at
+`assets/media/social/hush-social-card.png`.
 
 ## Shared design
 
@@ -52,5 +57,6 @@ deployment remain independent. The long product surface uses the generic
 `product-continuation.css` and `product-continuation.js` layers rather than
 product-specific classes.
 
-Visible branding uses the constructed HTML/CSS Kaizōsha mark. The Hush raster
-icon is limited to favicon, Apple touch icon, web manifest, and metadata use.
+Visible branding uses the constructed HTML/CSS Kaizōsha mark. The shared
+Kaizōsha raster icon is limited to favicon, Apple touch icon, web manifest, and
+metadata use.
