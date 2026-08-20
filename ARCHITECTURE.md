@@ -41,8 +41,9 @@ canonical `bottom-left` position.
 - `assets/scripts/product-continuation.js` applies the incoming product slot and
   cleans the URL. All content remains available without JavaScript.
 
-The shared Kaizōsha raster icon is metadata-only. The visible Kaizōsha brand remains the
-constructed text and CSS mark.
+The shared SVG icon keeps its Japanese glyphs as real text; the PNG is the
+raster fallback. Both are metadata-only. The visible Kaizōsha brand remains
+the constructed text and CSS mark.
 
 ## Cloudflare Pages hosting
 

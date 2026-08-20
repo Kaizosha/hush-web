@@ -53,6 +53,6 @@ deployment remain independent. The long product surface uses the generic
 `product-continuation.css` and `product-continuation.js` layers rather than
 product-specific classes.
 
-Visible branding uses the constructed HTML/CSS Kaizōsha mark. The shared
-Kaizōsha raster icon is limited to favicon, Apple touch icon, web manifest, and
-metadata use.
+Visible branding uses the constructed HTML/CSS Kaizōsha mark. The shared SVG
+keeps its Japanese glyphs as real text for supporting browsers; the PNG remains
+the Apple, PWA, and metadata fallback.
