@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f4f4ef" media="(prefers-color-scheme: light)">
+    <title>Privacy Notice — Hush</title>
+    <meta name="description" content="How Hush stores local sessions and sends selected content to connected OpenAI services.">
+    <meta name="author" content="Kaizōsha">
+    <meta name="publisher" content="Kaizōsha">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="application-name" content="Hush">
+    <link rel="icon" type="image/png" sizes="1024x1024" href="/icon.png?v=20260820-shared-mark">
+    <link rel="apple-touch-icon" href="/icon.png?v=20260820-shared-mark">
+    <link rel="manifest" href="/site.webmanifest?v=20260820-hush-continuation">
+    <link rel="canonical" href="https://hush.kaizosha.org/privacy">
+    <meta property="og:title" content="Privacy Notice — Hush">
+    <meta property="og:description" content="How Hush stores local sessions and sends selected content to connected OpenAI services.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hush.kaizosha.org/privacy">
+    <meta property="og:site_name" content="Hush by Kaizōsha">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Privacy Notice — Hush">
+    <meta name="twitter:description" content="How Hush stores local sessions and sends selected content to connected OpenAI services.">
+    <meta name="twitter:site" content="@KaizoshaX">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "url": "https://hush.kaizosha.org/privacy",
+        "name": "Privacy Notice — Hush",
+        "description": "How Hush stores local sessions and sends selected content to connected OpenAI services.",
+        "dateModified": "2026-08-20",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@type": "WebSite",
+          "url": "https://hush.kaizosha.org/",
+          "name": "Hush"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Kaizōsha",
+          "url": "https://kaizosha.org/"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="/assets/styles/markdown.css?v=20260820-touch-handoff">
+    <script src="/assets/scripts/site-motion.js?v=20260818-dynamic-grid" defer></script>
+    <script src="/assets/scripts/document-navigation.js?v=20260814-scroll-gutter" defer></script>
+  </head>
+  <body id="top" data-page-family="document" data-page="privacy">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <main class="main" id="main-content" data-file="hush-privacy.md" tabindex="-1">
+      <nav class="document-nav" aria-label="Document navigation">
+        <a class="document-back" href="/" aria-label="Back to Hush">← Back</a>
+        <span>/ Hush Privacy Notice</span>
+      </nav>
+
+      <section class="section" id="notice">
+        <header class="section-head">
+          <h1 class="section-title">Hush Privacy Notice</h1>
+        </header>
+        <div class="body-lines">
+          <p>HUSH is a macOS assistant from Kaizōsha. This notice describes the data behavior visible in the current public source. Packaged releases can differ from newer source, and third-party services have their own terms.</p>
+          <p class="document-meta">Last updated: August 20, 2026</p>
+        </div>
+      </section>
+
+      <section class="section" id="summary">
+        <header class="section-head"><h2 class="section-title">THE SHORT VERSION</h2></header>
+        <div class="body-lines">
+          <p>HUSH stores session history on your Mac. Provider keys use macOS Keychain by default. HUSH is not a fully local AI app: content needed for OpenAI-backed requests is sent directly to OpenAI under the account you connect.</p>
+          <p>The current source does not implement a Kaizōsha account, advertising service, analytics SDK, or telemetry pipeline. Visits to this website are governed separately by the <a href="https://kaizosha.org/privacy">Kaizōsha website privacy policy</a>.</p>
+        </div>
+      </section>
+
+      <section class="section" id="local-storage">
+        <header class="section-head"><h2 class="section-title">LOCAL STORAGE</h2></header>
+        <div class="body-lines">
+          <p>By default, HUSH stores current and previous sessions as JSON files inside <code>~/Library/Application Support/HUSH</code>. A person can choose another storage directory.</p>
+          <p>Local session records can include prompts, responses, live transcripts, timestamps, errors, capture and attachment metadata, image previews, file references, OpenAI file or conversation identifiers, and other state needed to reopen a session.</p>
+          <p>Preferences and provider-account records are stored in macOS preferences. HUSH supports searching, pinning, archiving, deleting, reopening, and branching sessions. Removing a local session does not remove content that was already transmitted to OpenAI.</p>
+        </div>
+      </section>
+
+      <section class="section" id="openai">
+        <header class="section-head"><h2 class="section-title">OPENAI PROCESSING</h2></header>
+        <div class="body-lines">
+          <p>OpenAI is the active connected AI provider in the current source. HUSH calls OpenAI directly with the project API key a person adds; it does not route these requests through a Kaizōsha AI server.</p>
+          <p>Depending on the feature used, OpenAI can receive prompts, instructions, recent conversation context, generated responses, screenshots or images, supported file uploads, microphone audio, system audio, live transcripts, model choices, and identifiers used to continue an OpenAI conversation.</p>
+          <p>When an optional OpenAI admin key is supplied, HUSH can also request organization cost and completions-usage summaries. OpenAI handles received data under the connected account and its own <a href="https://openai.com/policies/privacy-policy/">privacy policy</a>, service terms, settings, and retention rules.</p>
+        </div>
+      </section>
+
+      <section class="section" id="speech">
+        <header class="section-head"><h2 class="section-title">APPLE SPEECH FALLBACK</h2></header>
+        <div class="body-lines">
+          <p>When OpenAI Realtime is not configured or available, HUSH can use Apple speech technology for live transcription. On supported newer systems, HUSH uses Apple's local SpeechAnalyzer path. The legacy Speech framework can be used as a fallback on other supported systems.</p>
+          <p>The legacy fallback does not force on-device recognition. Apple speech services may therefore process audio according to the Mac's software version, language support, settings, and Apple's own terms. HUSH should not be described as providing universally on-device transcription.</p>
+        </div>
+      </section>
+
+      <section class="section" id="credentials">
+        <header class="section-head"><h2 class="section-title">ACCOUNTS AND CREDENTIALS</h2></header>
+        <div class="body-lines">
+          <p>API and admin keys are saved in macOS Keychain by default. If Keychain storage is disabled or a Keychain save fails, the current app can fall back to storing secrets in local macOS preferences. Account labels, provider settings, model selections, and masked key previews are also stored locally.</p>
+          <p>HUSH can optionally require Touch ID or the Mac login password before account changes or saved-key access. This protection is separate from Keychain storage and depends on the person's settings.</p>
+        </div>
+      </section>
+
+      <section class="section" id="permissions">
+        <header class="section-head"><h2 class="section-title">MACOS PERMISSIONS</h2></header>
+        <div class="body-lines">
+          <div class="entry-head"><span>Microphone</span><span>Used when Live includes microphone audio.</span></div>
+          <div class="entry-head"><span>Screen Recording</span><span>Used for system-audio capture and screen-capture workflows.</span></div>
+          <div class="entry-head"><span>Speech Recognition</span><span>Used when HUSH falls back to Apple speech transcription.</span></div>
+          <div class="entry-head"><span>Camera and Photos</span><span>Declared for camera-based input and images a person chooses from Photos when those inputs are used.</span></div>
+          <p>Permission choices can be reviewed in macOS System Settings. Use audio and screen capture only when you have permission and comply with applicable law, workplace rules, and platform policies.</p>
+        </div>
+      </section>
+
+      <section class="section" id="security">
+        <header class="section-head"><h2 class="section-title">SECURITY BOUNDARIES</h2></header>
+        <div class="body-lines">
+          <p>The current source enables Apple's hardened runtime, but the app target is not configured with App Sandbox. HUSH should not be described as sandboxed or as keeping all data on the device.</p>
+          <p>Stealth controls can reduce window visibility in the Dock, screen capture, Mission Control, Stage Manager, or other macOS surfaces. These controls are not a guarantee of invisibility, confidentiality, or protection against every capture method.</p>
+        </div>
+      </section>
+
+      <section class="section" id="changes">
+        <header class="section-head"><h2 class="section-title">CHANGES AND CONTACT</h2></header>
+        <div class="body-lines">
+          <p>This notice should be reviewed when HUSH changes its provider integrations, local storage, permissions, analytics, telemetry, or distribution model.</p>
+          <p>Questions about HUSH privacy can be sent through the Kaizōsha contact page: <a href="https://kaizosha.org/contact">https://kaizosha.org/contact</a>.</p>
+        </div>
+      </section>
+
+      <footer class="document-footer">
+        <a href="/">Hush</a>
+        <a href="/privacy" aria-current="page">App Privacy</a>
+        <a href="https://kaizosha.org/privacy">Website Privacy</a>
+        <a href="#top">Back to top</a>
+      </footer>
+    </main>
+  </body>
+</html>

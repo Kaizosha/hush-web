@@ -1,0 +1,18 @@
+{
+  "name": "Hush by Kaizōsha",
+  "short_name": "Hush",
+  "description": "A native macOS assistant for live audio, text, screen capture, and the context you choose to keep.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#101010",
+  "theme_color": "#101010",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
