@@ -7,8 +7,8 @@ The root route directly continues the expanded Hush product cell from
 `kaizosha.org`. It preserves the shared frame, toolbar, status bar, two-tone
 system, constructed Kaizōsha mark, typography, grid, and motion. Scrolling the
 expanded surface reveals product details without switching to another visual
-system. The originating product slot is rendered before first paint when the
-main site passes `?slot=`.
+system. When the main site passes `?slot=`, the synchronous continuation script
+applies the originating product slot during the initial document render.
 
 The product claims intentionally distinguish local session storage from direct
 OpenAI processing. HX08 is the latest packaged public download and requires
@@ -21,17 +21,14 @@ is currently published.
 python3 tools/dev-server.py 5173
 ```
 
-## Production build
+## Cloudflare Pages
 
-```sh
-./tools/build-site.sh
-```
-
-## Cloudflare deployment
-
-The repository is ready for Cloudflare Workers Builds with repository root `/`,
-build command `./tools/build-site.sh`, and deploy command `npx wrangler deploy`.
-Attach `hush.kaizosha.org` as the Worker's custom domain after the first deploy.
+The repository root is the deployable website. Connect this repository to a
+Cloudflare Pages project with framework preset `None`, production branch
+`main`, no build command, and build output directory `.`. Every push to `main`
+publishes the committed static files directly; there is no generated output or
+manual deployment command. Attach `hush.kaizosha.org` as the Pages custom
+domain.
 
 ## Routes
 
@@ -41,11 +38,10 @@ Attach `hush.kaizosha.org` as the Worker's custom domain after the first deploy.
 - `/site.webmanifest`, `/robots.txt`, and `/sitemap.xml` — app and search metadata
 
 There is no package manager, frontend framework, TypeScript, runtime API,
-database, account, analytics SDK, or build dependency in this website. The
-explicit build allowlist produces `dist/client` plus the static Cloudflare
-Worker entrypoint at `dist/server/index.js`.
+database, account, analytics SDK, build dependency, or server process in this
+website.
 
-The root metadata and production build include the 1200 × 630 product card at
+The root metadata references the committed 1200 × 630 product card at
 `assets/media/social/hush-social-card.png`.
 
 ## Shared design

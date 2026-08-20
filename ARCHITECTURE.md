@@ -26,11 +26,9 @@ scroll handoff. The destination renders that state immediately:
 
 The main site can pass the active product slot as `?slot=top-left`,
 `?slot=top-right`, `?slot=bottom-left`, or `?slot=bottom-right`. The synchronous
-Worker renders that slot directly into the returned root HTML so the first
-browser frame matches the originating Kaizōsha quadrant. The small plain-
-JavaScript controller retains the same swap as a static-hosting fallback and
-removes only the temporary `slot` parameter. Direct visits use Hush's canonical
-`bottom-left` position.
+plain-JavaScript controller applies the slot during the initial document render
+and removes only the temporary `slot` parameter. Direct visits use Hush's
+canonical `bottom-left` position.
 
 ## Shared layers
 
@@ -40,22 +38,20 @@ removes only the temporary `slot` parameter. Direct visits use Hush's canonical
   continuation used by a product subsite without product-specific selectors.
 - `assets/scripts/site-motion.js` and `document-navigation.js` are the shared
   optional progressive enhancements used by Kaizōsha.
-- `assets/scripts/product-continuation.js` provides generic static-hosting slot
-  fallback and URL cleanup. All content remains available without JavaScript.
+- `assets/scripts/product-continuation.js` applies the incoming product slot and
+  cleans the URL. All content remains available without JavaScript.
 
 The shared Kaizōsha raster icon is metadata-only. The visible Kaizōsha brand remains the
 constructed text and CSS mark.
 
-## Build and hosting
+## Cloudflare Pages hosting
 
-`tools/build-site.sh` recreates `dist/` from an explicit allowlist. Public files
-are copied to `dist/client/`, and `tools/sites-static-worker.js` becomes
-`dist/server/index.js`. The optional social card is copied only when present.
-
-The Worker renders the requested root product slot before first paint and
-handles HTTPS, canonical redirects, GET/HEAD restriction, cache policy,
-security headers, and 404 no-index headers. Cloudflare static assets are bound
-as `ASSETS` through `wrangler.jsonc`.
+The repository root is the complete public site. Cloudflare Pages connects to
+the Git repository with framework preset `None`, production branch `main`, no
+build command, and build output directory `.`. A push to `main` publishes the
+committed static files directly. Pages supplies extensionless HTML routing and
+the custom `404.html`; `_redirects` canonicalizes `/privacy/`, and `_headers`
+supplies the security, cache, language, and no-index policies.
 
 There is no frontend dependency, package manager, TypeScript, framework,
 runtime API, database, account, or analytics service in the website.
